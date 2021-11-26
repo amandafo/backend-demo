@@ -12,23 +12,17 @@ data class Product (
     val id: Long = 0,
 
     @get: NotBlank
-    val marca: String = "",
+    val title: String = "",
 
     @get: NotBlank
-    val name: String = "",
-
-    @get: NotBlank
-    val type: String = "",
-
-    @get: NotBlank
-    val cor: String = "",
-
-    @get: NotBlank
-    val size: Int? = null,
+    val price: Long = 0,
 
     @get: NotBlank
     val description: String = "",
 
     @get: NotBlank
-    val photos: String = ""
+    val category: String = "",
+
+    @get: NotBlank
+    val image: String = ""
 )

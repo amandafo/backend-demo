@@ -36,13 +36,11 @@ class ProductController(private val productRepository: ProductRepository) {
         return productRepository.findById(productId).map { existingArticle ->
             val updatedProduct: Product = existingArticle
                 .copy(
-                    name = newProduct.name,
-                    marca = newProduct.marca,
-                    type = newProduct.type,
-                    cor = newProduct.cor,
-                    size = newProduct.size,
+                    title = newProduct.title,
+                    price = newProduct.price,
                     description = newProduct.description,
-                    photos = newProduct.photos,
+                    category = newProduct.category,
+                    image = newProduct.image,
                 )
             ResponseEntity.ok().body(productRepository.save(updatedProduct))
         }.orElse(ResponseEntity.notFound().build())
